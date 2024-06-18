@@ -1,0 +1,36 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# Wordpress
+wp-config.php
+
+# Oxigeno
+/wp-content/themes/oxigeno/*
+!/wp-content/themes/oxigeno/README.md
+!/wp-content/themes/oxigeno/custom-fonts
+/wp-content/plugins/bt_cost_calculator/*
+!/wp-content/plugins/bt_cost_calculator/README.md
+/wp-content/plugins/bt_wordpress_importer/*
+!/wp-content/plugins/bt_wordpress_importer/README.md
+/wp-content/plugins/oxigeno/*
+!/wp-content/plugins/oxigeno/README.md

@@ -1,0 +1,3 @@
+# Oxigeno - Sports Club & Team WordPress Theme
+A license for [this theme ](https://themeforest.net/item/oxigeno-sport-club-and-team-wordpress-theme/21162565) was purchased from ThemeForest.
+According to their [Regular License](https://themeforest.net/licenses/terms/regular), re-distributing the theme source files is not allowed - Therefore, this repository contains only custom additions inside the theme and plugin directories.
