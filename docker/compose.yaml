@@ -11,6 +11,13 @@ services:
       timeout: 3s
       retries: 0
     restart: always
+  db-ui:
+    image: destrostudios/phpmyadmin
+    volumes:
+      - /etc/letsencrypt:/etc/letsencrypt:ro
+    ports:
+      - "1501:443"
+    restart: always
   app:
     image: wordpress:6.5.4-php8.3-apache
     environment:
