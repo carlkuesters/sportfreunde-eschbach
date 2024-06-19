@@ -13,6 +13,8 @@ services:
     restart: always
   db-ui:
     image: destrostudios/phpmyadmin
+    environment:
+      UPLOAD_LIMIT: 50M
     volumes:
       - /etc/letsencrypt:/etc/letsencrypt:ro
     ports:
