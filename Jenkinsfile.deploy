@@ -1,0 +1,45 @@
+pipeline {
+    agent any
+    options {
+        buildDiscarder(logRotator(numToKeepStr: '10'))
+        skipDefaultCheckout()
+        ansiColor('xterm')
+    }
+    parameters {
+        string(name: 'VERSION', defaultValue: 'master')
+    }
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+                sh 'git checkout $VERSION'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh 'mv wp-content docker'
+                dir('docker') {
+                    withCredentials([
+                        string(credentialsId: 'db-root-password', variable: 'DB_ROOT_PASSWORD'),
+                        string(credentialsId: 'auth-key', variable: 'AUTH_KEY'),
+                        string(credentialsId: 'auth-salt', variable: 'AUTH_SALT'),
+                        string(credentialsId: 'secure-auth-key', variable: 'SECURE_AUTH_KEY'),
+                        string(credentialsId: 'secure-auth-salt', variable: 'SECURE_AUTH_SALT'),
+                        string(credentialsId: 'logged-in-key', variable: 'LOGGED_IN_KEY'),
+                        string(credentialsId: 'logged-in-salt', variable: 'LOGGED_IN_SALT'),
+                        string(credentialsId: 'nonce-key', variable: 'NONCE_KEY'),
+                        string(credentialsId: 'nonce-salt', variable: 'NONCE_SALT')
+                    ]) {
+                        sh 'docker compose build --no-cache'
+                        sh 'docker compose up -d'
+                    }
+                }
+            }
+        }
+    }
+    post {
+        always {
+            cleanWs()
+        }
+    }
+}

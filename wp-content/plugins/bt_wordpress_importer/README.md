@@ -1,1 +1,0 @@
-This plugin is part of the `oxigeno` theme, please refer to its directory for the detailed information.

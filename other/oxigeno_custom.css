@@ -1,0 +1,121 @@
+/*Header*/
+
+.bt_bb_section[class*="bt_bb_background_overlay"]:before {
+    display: none;
+}
+
+.btPageHeadline header {
+    max-width: none;
+}
+
+.bt_bb_size_large.bt_bb_headline h1 {
+    font-size: 4rem;
+}
+
+@media (max-width: 1119px) {
+    .bt_bb_size_large.bt_bb_headline h1 {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 869px) {
+    .btPageHeadline .bt_bb_port {
+        padding-bottom: 7em;
+        padding-top: 5em;
+    }
+
+    .bt_bb_size_large.bt_bb_headline h1,
+    .home .btArticleHeadline h2 {
+        font-size: 2rem;
+    }
+}
+
+/*Headline*/
+
+.btPageHeadline {
+    background-image: url('/wp-content/uploads/2020/10/Header.png') !important;
+    background-position: top;
+    color: #FFF !important;
+}
+
+.bt_bb_headline_superheadline {
+    display: none !important; /*Hide category above page title*/
+}
+
+/*Sidebar*/
+
+.btSoftRoundedButtons.btWithSidebar .btContentHolder .btSidebar .btBox.widget_media_image {
+    margin-bottom: 0;
+    border-radius: 8px 8px 0 0;
+}
+
+.btSoftRoundedButtons.btWithSidebar .btContentHolder .btSidebar .btBox.widget_media_image {
+    padding: 0;
+    line-height: 0; /*To get rid of the small white line below the image*/
+}
+
+.btSoftRoundedButtons.btWithSidebar .btContentHolder .btSidebar .btBox.widget_media_image h4 {
+    padding-left: 26px;
+    padding-right: 26px;
+}
+
+.btSoftRoundedButtons.btWithSidebar .btContentHolder .btSidebar .btBox.widget_media_image:last-of-type, .btSoftRoundedButtons.btWithSidebar .btContentHolder .btSidebar .btBox.widget_media_image:last-of-type img {
+    border-radius: 0 0 8px 8px;
+}
+
+.btSidebar .widget_media_image {
+    /*Bigger gap between sponsor images*/
+    padding-top: 2em !important;
+    padding-bottom: 0 !important;
+}
+
+/*Content*/
+
+@media (max-width: 1299px) {
+    .btPageHeadline .bt_bb_port {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    .btPageWrap .btContentWrap .btContentHolder {
+        max-width: none;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+.page-template-default .btContent {
+    padding: 2rem;
+    background: #FFF;
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .btWithSidebar.btSidebarRight:not(.home):not(.single-post) .btContentHolder .btContent {
+        padding: 2rem;
+    }
+}
+
+/*Blog*/
+
+.btArticleMedia, .btPrevNextImage {
+    display: none;
+}
+
+/*Editor classes*/
+
+.image-without-margin-bottom, .btContentHolder .image-without-margin-bottom figure {
+    margin-bottom: 0;
+}
+
+/*Font optimizations mobile*/
+
+@media (max-width: 768px) {
+    h1.has-large-font-size {
+        font-size: 2rem;
+    }
+
+    h2.has-medium-font-size	{
+        font-size: 16px;
+    }
+}
