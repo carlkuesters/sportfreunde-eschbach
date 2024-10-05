@@ -36,6 +36,7 @@ services:
       WORDPRESS_NONCE_SALT: $NONCE_SALT
     volumes:
       - /home/destroflyer/sportfreunde-eschbach/wp-content:/var/www/html/wp-content
+      - /home/destroflyer/sportfreunde-eschbach/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
     ports:
       - "127.0.0.1:1500:80"
     restart: always
